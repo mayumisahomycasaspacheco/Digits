@@ -88,5 +88,3 @@ def jugar():
             print("Te quedaste sin intentos. El numero era " + str(numero_secreto_3))
     else:
         print("Esa opcion no existe, prueba con un numero del 1 al 3")
-
-jugar()
