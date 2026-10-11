@@ -9,7 +9,7 @@ def jugar():
     contador_intentos = 0
     adivinado = False
 
-    print("Bienvenido a Digits")
+    print("¡Bienvenido a Adivina el numero!")
     print("Elige una dificultad")
     print("1. Facil (1-50)")
     print("2. Medio (1-100)")
