@@ -4,67 +4,67 @@ def jugar():
     monedas = 10
     jugando = True
 
-    print("¡Bienvenidos a Dados de la suerte!")
-    print("Apuesta monedas y adivina la suma de dos dados:")
-    print("Elige una suma baja (2-6), siete o suma alta (8-12) y tira los dados.")
-    print("Baja y alta pagan lo apostado. Siete paga el triple.")
+    print("Welcome to Lucky Dice!")
+    print("Bet coins and guess the sum of two dice:")
+    print("Choose a low sum (2-6), seven or a high sum (8-12) and roll the dice.")
+    print("Low and high pay what you bet. Seven pays triple.")
 
     while jugando and monedas > 0:
         print("")
-        print("Tienes " + str(monedas) + " monedas")
+        print("You have " + str(monedas) + " coins")
 
         pidiendo_apuesta = True
         while pidiendo_apuesta:
             try:
-                apuesta = int(input("¿Cuántas monedas quieres apostar? "))
+                apuesta = int(input("How many coins do you want to bet? "))
                 if apuesta < 1:
-                    print("Tienes que apostar al menos 1 moneda.")
+                    print("You have to bet at least 1 coin.")
                 elif apuesta > monedas:
-                    print("No puedes apostar más de lo que tienes (" + str(monedas) + ").")
+                    print("You can't bet more than you have (" + str(monedas) + ").")
                 else:
                     pidiendo_apuesta = False
             except ValueError:
-                print("Eso no es un número entero, intenta otra vez.")
+                print("That is not a whole number, try again.")
 
         pidiendo_eleccion = True
         while pidiendo_eleccion:
-            eleccion = input("Elige baja, siete o alta: ").lower().strip()
-            if eleccion == "baja" or eleccion == "siete" or eleccion == "alta":
+            eleccion = input("Choose low, seven or high: ").lower().strip()
+            if eleccion == "low" or eleccion == "seven" or eleccion == "high":
                 pidiendo_eleccion = False
             else:
-                print("Opción inválida. Escribe exactamente: baja, siete o alta.")
+                print("Invalid option. Type exactly: low, seven or high.")
 
         dado_1 = random.randint(1, 6)
         dado_2 = random.randint(1, 6)
         suma = dado_1 + dado_2
-        print("Salió " + str(dado_1) + " y " + str(dado_2) + ": suma " + str(suma))
+        print("You rolled " + str(dado_1) + " and " + str(dado_2) + ": sum " + str(suma))
 
-        if eleccion == "baja" and suma < 7:
-            print("¡Ganaste " + str(apuesta) + " monedas!")
+        if eleccion == "low" and suma < 7:
+            print("You won " + str(apuesta) + " coins!")
             monedas = monedas + apuesta
-        elif eleccion == "alta" and suma > 7:
-            print("¡Ganaste " + str(apuesta) + " monedas!")
+        elif eleccion == "high" and suma > 7:
+            print("You won " + str(apuesta) + " coins!")
             monedas = monedas + apuesta
-        elif eleccion == "siete" and suma == 7:
-            print("¡Siete exacto! Ganaste " + str(apuesta * 3) + " monedas")
+        elif eleccion == "seven" and suma == 7:
+            print("Exactly seven! You won " + str(apuesta * 3) + " coins")
             monedas = monedas + apuesta * 3
         else:
-            print("Perdiste " + str(apuesta) + " monedas")
+            print("You lost " + str(apuesta) + " coins")
             monedas = monedas - apuesta
 
         if monedas > 0:
             pidiendo_seguir = True
             while pidiendo_seguir:
-                otra = input("¿Seguir jugando? (s/n): ").lower().strip()
-                if otra == "s":
+                otra = input("Keep playing? (y/n): ").lower().strip()
+                if otra == "y":
                     pidiendo_seguir = False
                 elif otra == "n":
                     pidiendo_seguir = False
                     jugando = False
                 else:
-                    print("Escribe solo s o n.")
+                    print("Type only y or n.")
 
     if monedas <= 0:
-        print("Te quedaste sin monedas. ¡Fin del juego!")
+        print("You ran out of coins. Game over!")
     else:
-        print("Te retiraste con " + str(monedas) + " monedas.")
+        print("You left with " + str(monedas) + " coins.")

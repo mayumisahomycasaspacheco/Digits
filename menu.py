@@ -8,13 +8,13 @@ seguir = True
 while seguir:
     print("")
     print("=== DIGITS ===")
-    print("1. Adivina el número")
-    print("2. Dados de la suerte")
-    print("3. Calculadora relámpago")
-    print("4. Memoria de dígitos")
-    print("0. Salir")
+    print("1. Guess the Number")
+    print("2. Lucky Dice")
+    print("3. Lightning Calculator")
+    print("4. Digit Memory")
+    print("0. Exit")
 
-    opcion = input("Elige un juego: ").strip()
+    opcion = input("Choose a game: ").strip()
 
     if opcion == "1":
         digits.jugar()
@@ -25,7 +25,7 @@ while seguir:
     elif opcion == "4":
         digits3.jugar()
     elif opcion == "0":
-        print("¡Gracias por jugar Digits! Hasta pronto.")
+        print("Thanks for playing Digits! See you soon.")
         seguir = False
     else:
-        print("Esa opción no existe, elige un número del 0 al 4.")
+        print("That option doesn't exist, choose a number from 0 to 4.")

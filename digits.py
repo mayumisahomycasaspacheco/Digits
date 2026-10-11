@@ -9,82 +9,81 @@ def jugar():
     contador_intentos = 0
     adivinado = False
 
-    print("¡Bienvenido a Adivina el numero!")
-    print("Elige una dificultad")
-    print("1. Facil (1-50)")
-    print("2. Medio (1-100)")
-    print("3. Dificil (1-500)")
+    print("Welcome to Guess the Number!")
+    print("Choose a difficulty")
+    print("1. Easy (1-50)")
+    print("2. Medium (1-100)")
+    print("3. Hard (1-500)")
 
-    opcion = input("Escoge una opcion: ")
+    opcion = input("Choose an option: ")
 
     if opcion == "1":
         while not adivinado and contador_intentos < maximo_intentos:
             correcto = True
             while correcto:
                 try:
-                    intento = int(input("Ingresa un numero: "))
+                    intento = int(input("Enter a number: "))
                     correcto = False
                 except ValueError:
-                    print("Ese no es un numero, intenta otra cosa.")
+                    print("That is not a number, try something else.")
             contador_intentos = contador_intentos + 1
-                
+
             if intento < numero_secreto_1:
-                print("El numero es más alto")
+                print("The number is higher")
             elif intento > numero_secreto_1:
-                print("El numero es más bajo")
+                print("The number is lower")
             else:
-                print("¡Felicidades! Encontraste el numero secreto")
+                print("Congratulations! You found the secret number")
                 adivinado = True
         if adivinado:
-            print("Lo lograste en: " + str(contador_intentos) + " intentos.")
+            print("You did it in: " + str(contador_intentos) + " attempts.")
         else:
-            print("Te quedaste sin intentos. El numero era " + str(numero_secreto_1))     
+            print("You ran out of attempts. The number was " + str(numero_secreto_1))
 
     elif opcion == "2":
         while not adivinado and contador_intentos < maximo_intentos:
             correcto = True
             while correcto:
                 try:
-                    intento = int(input("Ingresa un numero: "))
+                    intento = int(input("Enter a number: "))
                     correcto = False
                 except ValueError:
-                    print("Ese no es un numero, intenta otra cosa.")
+                    print("That is not a number, try something else.")
             contador_intentos = contador_intentos + 1
-            
+
             if intento < numero_secreto_2:
-                print("El numero es mas alto")
+                print("The number is higher")
             elif intento > numero_secreto_2:
-                print("El numero es mas bajo")
+                print("The number is lower")
             else:
-                print("¡Felicidades! Encontraste el numero secreto")
+                print("Congratulations! You found the secret number")
                 adivinado = True
         if adivinado:
-            print("Lo lograste en: " + str(contador_intentos) + " intentos.")
+            print("You did it in: " + str(contador_intentos) + " attempts.")
         else:
-            print("Te quedaste sin intentos. El numero era " + str(numero_secreto_2))          
-            
+            print("You ran out of attempts. The number was " + str(numero_secreto_2))
 
     elif opcion == "3":
         while not adivinado and contador_intentos < maximo_intentos:
             correcto = True
             while correcto:
                 try:
-                    intento = int(input("Ingresa un numero: "))
+                    intento = int(input("Enter a number: "))
                     correcto = False
                 except ValueError:
-                    print("Ese no es un numero, intenta otra cosa.")
+                    print("That is not a number, try something else.")
             contador_intentos = contador_intentos + 1
-            
+
             if intento < numero_secreto_3:
-                print("El numero es mas alto")
+                print("The number is higher")
             elif intento > numero_secreto_3:
-                print("El numero es mas bajo")
+                print("The number is lower")
             else:
-                print("¡Felicidades! Encontraste el numero secreto")
+                print("Congratulations! You found the secret number")
                 adivinado = True
         if adivinado:
-            print("Lo lograste en: " + str(contador_intentos) + " intentos.")
+            print("You did it in: " + str(contador_intentos) + " attempts.")
         else:
-            print("Te quedaste sin intentos. El numero era " + str(numero_secreto_3))
+            print("You ran out of attempts. The number was " + str(numero_secreto_3))
     else:
-        print("Esa opcion no existe, prueba con un numero del 1 al 3")
+        print("That option doesn't exist, try a number from 1 to 3")

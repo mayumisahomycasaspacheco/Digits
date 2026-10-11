@@ -5,28 +5,28 @@ def jugar():
     total_rondas = 5
     aciertos = 0
     ronda = 0
-    
+
     print("")
-    print("===CALCULADORA RELÁMPAGO===")
-    print("Resuelve 5 ejercicios lo más rápido que puedas.")
-    print("Se mide el tiempo total, asi que no te distraigas.")
+    print("=== LIGHTNING CALCULATOR ===")
+    print("Solve 5 problems as fast as you can.")
+    print("Your total time is measured, so don't get distracted.")
     print("")
-    input("Presiona enter para comenzar...")
-    
+    input("Press Enter to start...")
+
     inicio = time.time()
-    
+
     while ronda < total_rondas:
         a = random.randint(1, 12)
         b = random.randint(1, 12)
         op = random.choice(["+", "-", "*"])
-        
+
         if op == "+":
             resultado = a + b
         elif op == "-":
             resultado = a - b
         else:
             resultado = a * b
-        
+
         pidiendo = True
         while pidiendo:
             try:
@@ -34,26 +34,25 @@ def jugar():
                 respuesta = int(input(texto))
                 pidiendo = False
             except ValueError:
-                print("Eso no es un número entero, intenta otra vez.")
-                
+                print("That is not a whole number, try again.")
+
         if respuesta == resultado:
-            print("¡Correcto!")
+            print("Correct!")
             aciertos = aciertos + 1
         else:
-            print("Incorrecto, era " + str(resultado))
-        
+            print("Wrong, it was " + str(resultado))
+
         ronda = ronda + 1
-        
+
     total = round(time.time() - inicio, 1)
-    
+
     print("")
-    print("Acertaste" + str(aciertos) + " de " + str(total_rondas))
-    print("Tiempo total: " + str(total) + " segundos")
-    
+    print("You got " + str(aciertos) + " out of " + str(total_rondas))
+    print("Total time: " + str(total) + " seconds")
+
     if aciertos == total_rondas:
-        print("¡Perfecto!. Cerebro de calculadora.")
+        print("Perfect! Calculator brain.")
     elif aciertos >= 3:
-        print("¡Bien hecho!")
+        print("Well done!")
     else:
-        print("Sigue practicando, ¡Tú puedes!")
-        
+        print("Keep practicing, you can do it!")
