@@ -27,11 +27,18 @@ def jugar():
         else:
             resultado = a * b
 
+        if op == "*":
+            simbolo = "x"
+        else:
+            simbolo = op
+
+        print("")
+        print("Question " + str(ronda + 1) + " of " + str(total_rondas))
+
         pidiendo = True
         while pidiendo:
             try:
-                texto = str(ronda + 1) + "/" + str(total_rondas) + " " + str(a) + " " + op + " " + str(b) + " = "
-                respuesta = int(input(texto))
+                respuesta = int(input(str(a) + " " + simbolo + " " + str(b) + " = "))
                 pidiendo = False
             except ValueError:
                 print("That is not a whole number, try again.")
